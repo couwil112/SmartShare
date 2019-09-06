@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.StringReader;
 import java.net.Socket;
 
 import javax.xml.bind.JAXBContext;
@@ -14,6 +15,8 @@ import javax.xml.bind.Unmarshaller;
 import com.ftd.smartshare.dto.DownloadRequestDto;
 import com.ftd.smartshare.dto.UploadRequestDto;
 import com.ftd.smartshare.dto.ViewRequestDto;
+
+
 
 public class SmartShareClientHandler implements Runnable {
 
@@ -33,12 +36,16 @@ public class SmartShareClientHandler implements Runnable {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             Marshaller marshaller = context.createMarshaller();            
             
-            
             String requestType = bufferedReader.readLine();
-            switch (requestType) {
-	            case "download" : downloadRequestHandler(unmarshaller, bufferedReader);
-	            case "upload" : uploadRequestHandler(unmarshaller, bufferedReader);
-	            case "view" : viewRequestHandler(unmarshaller, bufferedReader);
+            while (clientSocket.isConnected() && !clientSocket.isClosed()) {
+            	requestType = bufferedReader.readLine();	  
+            	while (!requestType.equals(null)) {
+		            switch (requestType) {
+			            case "download" : downloadRequestHandler(unmarshaller, bufferedReader);
+			            case "upload" : uploadRequestHandler(unmarshaller, bufferedReader);
+			            case "view" : viewRequestHandler(unmarshaller, bufferedReader);
+		            }
+            	}
             }
 
 		} catch (IOException | JAXBException e) {

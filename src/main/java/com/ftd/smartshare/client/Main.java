@@ -33,7 +33,7 @@ class Main {
             Marshaller marshaller = context.createMarshaller();
             Unmarshaller unmarshaller = context.createUnmarshaller();
             UploadRequestDto uploadRequest = (UploadRequestDto) unmarshaller.unmarshal(
-            		new File("UploadRequest.xml"));
+            		new File("xmlrequests\\UploadRequest.xml"));
 
             //  Marshal request to stringWriter
             StringWriter stringWriter = new StringWriter();

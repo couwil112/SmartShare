@@ -42,6 +42,6 @@ public final class Api {
      * @return true if request was successful and false if unsuccessful
      */
     public static boolean view(ViewRequestDto viewRequestDto) {
-    	return false;
+    	throw new NotImplementedException();
     }
 }
