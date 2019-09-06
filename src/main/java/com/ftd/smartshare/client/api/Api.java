@@ -1,7 +1,9 @@
 package com.ftd.smartshare.client.api;
 
 import com.ftd.smartshare.dto.DownloadRequestDto;
+
 import com.ftd.smartshare.dto.UploadRequestDto;
+import com.ftd.smartshare.dto.ViewRequestDto;
 import com.ftd.smartshare.utils.NotImplementedException;
 
 public final class Api {
@@ -32,5 +34,14 @@ public final class Api {
     public static boolean upload(UploadRequestDto uploadRequestDto) {
         throw new NotImplementedException();
     }
-
+    
+    /**
+     * Send view request
+     *
+     * @param uploadRequestDto      JAXB annotated class representing the upload request
+     * @return true if request was successful and false if unsuccessful
+     */
+    public static boolean view(ViewRequestDto viewRequestDto) {
+    	return false;
+    }
 }

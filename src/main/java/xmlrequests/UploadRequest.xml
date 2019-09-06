@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UploadRequestDto>
+	<file_name>fasttrackd.doc</file_name>
+	<file>{0011, 0101, 0110, 0110}</file>
+	<expiration_offset>10233132</expiration_offset>
+	<max_downloads>5</max_downloads>
+	<password>12345</password>
+</UploadRequestDto>

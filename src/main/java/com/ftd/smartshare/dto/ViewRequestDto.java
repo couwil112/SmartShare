@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DownloadRequestDto {
+public class ViewRequestDto {
 
 	@XmlElement
 	private String file_name;
@@ -15,7 +15,7 @@ public class DownloadRequestDto {
 	@XmlElement
 	private String password;
 	
-	public DownloadRequestDto() {		
+	public ViewRequestDto() {		
 	}
 
 	public String getFile_name() {
@@ -36,6 +36,8 @@ public class DownloadRequestDto {
 
 	@Override
 	public String toString() {
-		return "DownloadRequestDto [file_name=" + file_name + "]";
-	}			
+		return "ViewRequestDto [file_name=" + file_name + "]";
+	}
+	
+	
 }

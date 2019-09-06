@@ -20,6 +20,7 @@ public class Upload implements Runnable {
     @CommandLine.Parameters(arity="0", index = "1", description = "The password for the file")
     private String password = PasswordGenerator.generate();
 
+    //TODO: Update run method
     public void run() {
         System.out.println("Uploading: " + file.getAbsolutePath());
         System.out.println("Password will be printed below");
